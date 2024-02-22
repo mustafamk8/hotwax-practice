@@ -42,7 +42,7 @@ public class OrderHeader {
     @Column(name = "COMPLETED_DATE")
     private LocalDateTime completedDate;
 
-    @OneToMany(mappedBy = "orderHeader")
+    @OneToMany(mappedBy = "orderHeaderPart")
     private List<OrderPart> orderParts;
 
     @OneToMany(mappedBy = "orderHeader")
@@ -135,21 +135,21 @@ public class OrderHeader {
 		this.completedDate = completedDate;
 	}
 
-	public List<OrderPart> getOrderParts() {
-		return orderParts;
-	}
-
-	public void setOrderParts(List<OrderPart> orderParts) {
-		this.orderParts = orderParts;
-	}
-
-	public List<OrderItem> getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
-	}
+//	public List<OrderPart> getOrderParts() {
+//		return orderParts;
+//	}
+//
+//	public void setOrderParts(List<OrderPart> orderParts) {
+//		this.orderParts = orderParts;
+//	}
+//
+//	public List<OrderItem> getOrderItems() {
+//		return orderItems;
+//	}
+//
+//	public void setOrderItems(List<OrderItem> orderItems) {
+//		this.orderItems = orderItems;
+//	}
     
     
     

@@ -15,6 +15,8 @@ public class Party {
 
     @OneToMany(mappedBy = "party")
     private List<Person> persons;
+    
+    
 
 	public Party() {
 		// TODO Auto-generated constructor stub

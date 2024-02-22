@@ -15,7 +15,7 @@ public class OrderPart {
 
     @ManyToOne
     @JoinColumn(name = "ORDER_ID", referencedColumnName = "ORDER_ID")
-    private OrderHeader orderHeader;
+    private OrderHeader orderHeaderPart;
 
     @Column(name = "ORDER_PART_SEQ_ID", length = 40)
     private String orderPartSeqId;
@@ -55,12 +55,14 @@ public class OrderPart {
 		this.orderPartId = orderPartId;
 	}
 
-	public OrderHeader getOrderHeader() {
-		return orderHeader;
+	
+
+	public OrderHeader getOrderHeaderPart() {
+		return orderHeaderPart;
 	}
 
-	public void setOrderHeader(OrderHeader orderHeader) {
-		this.orderHeader = orderHeader;
+	public void setOrderHeaderPart(OrderHeader orderHeaderPart) {
+		this.orderHeaderPart = orderHeaderPart;
 	}
 
 	public String getOrderPartSeqId() {

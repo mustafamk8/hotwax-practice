@@ -1,80 +1,63 @@
-package com.hotwax.entity;
-
-import jakarta.persistence.*;
+package com.hotwax.payloads;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "person")
-public class Person {
+import com.hotwax.entity.Party;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id", nullable = false)
-    private Long personId;
+import jakarta.persistence.Column;
 
-    @OneToOne
-    @JoinColumn(name = "PARTY_ID", referencedColumnName = "PARTY_ID")
-    private Party party;
+public class PersonDto {
 
-    @Column(name = "SALUTATION", length = 255)
-    private String salutation;
+	private Long personId;
 
-    @Column(name = "FIRST_NAME", length = 255)
-    private String firstName;
+	private String salutation;
 
-    @Column(name = "MIDDLE_NAME", length = 255)
-    private String middleName;
+	private String firstName;
 
-    @Column(name = "LAST_NAME", length = 255)
-    private String lastName;
+	private String middleName;
 
-    @Column(name = "GENDER", length = 1)
-    private Character gender;
+	private String lastName;
 
-    @Column(name = "BIRTH_DATE")
-    private LocalDate birthDate;
+	private Party party;
 
-    @Column(name = "MARITAL_STATUS_ENUM_ID", length = 40)
-    private String maritalStatusEnumId;
+	private Character gender;
 
-    @Column(name = "EMPLOYMENT_STATUS_ENUM_ID", length = 40)
-    private String employmentStatusEnumId;
+	private LocalDate birthDate;
 
-    @Column(name = "OCCUPATION", length = 255)
-    private String occupation;
+	private String maritalStatusEnumId;
 
+	private String employmentStatusEnumId;
 
-	public Person() {
-		// TODO Auto-generated constructor stub
-	}
-
-	
-
+	private String occupation;
 
 	public Long getPersonId() {
 		return personId;
 	}
 
-
-
 	public void setPersonId(Long personId) {
 		this.personId = personId;
 	}
-
-
 
 	public Party getParty() {
 		return party;
 	}
 
-
-
 	public void setParty(Party party) {
 		this.party = party;
 	}
 
+	public Character getGender() {
+		return gender;
+	}
 
+	public void setGender(Character gender) {
+		this.gender = gender;
+	}
+
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+	
 
 	public String getSalutation() {
 		return salutation;
@@ -108,18 +91,6 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public Character getGender() {
-		return gender;
-	}
-
-	public void setGender(Character gender) {
-		this.gender = gender;
-	}
-
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
-
 	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
@@ -147,9 +118,9 @@ public class Person {
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
 	}
-	
-	
 
-    
+	public PersonDto() {
+		// TODO Auto-generated constructor stub
+	}
 
 }

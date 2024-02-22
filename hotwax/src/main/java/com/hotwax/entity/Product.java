@@ -13,7 +13,7 @@ public class Product {
     private Long productId;
 
     @ManyToOne
-    @JoinColumn(name = "OWNER_PARTY_ID", referencedColumnName = "PARTY_ID")
+    @JoinColumn(name = "product_party_id", referencedColumnName = "PARTY_ID")
     private Party ownerParty;
 
     @Column(name = "PRODUCT_NAME", length = 255)
